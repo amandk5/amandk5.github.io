@@ -1,0 +1,285 @@
+import {
+  Avatar,
+  Box,
+  Container,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  keyframes,
+  Text,
+} from "@chakra-ui/react";
+import React from "react";
+import Card from "./Card";
+import SkillCard from "./SkillCard";
+import ProjectCard from "./ProjectCard";
+
+import profile from "../Images/profile.png";
+import graduationImage from "../Images/graduation1.png";
+
+import mongodb from "../Images/skills/mongodb.png";
+import express from "../Images/skills/express.png";
+import react from "../Images/skills/react.png";
+import nodejs from "../Images/skills/nodejs.png";
+import redux from "../Images/skills/redux.png";
+import html5 from "../Images/skills/html.png";
+import css from "../Images/skills/css.png";
+import typescript from "../Images/skills/typescript.png";
+import javascript from "../Images/skills/javascript.png";
+import chakraUi from "../Images/skills/chakraUi.png";
+
+import mentimeter from "../Images/apps/mentimeter.png";
+import zoomcar from "../Images/apps/zoomcar.png";
+import interntheory from "../Images/apps/interntheory.png";
+import kindmeal from "../Images/apps/kindmeal.png";
+
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { motion } from "framer-motion";
+
+export default function Content() {
+
+  const animationKeyframes = keyframes`
+  0% { transform: scale(1) rotate(0); border-radius: 20%; }
+  25% { transform: scale(2) rotate(0); border-radius: 20%; }
+  50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
+  75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
+  100% { transform: scale(1) rotate(0); border-radius: 20%; }
+`;
+
+const animation = `${animationKeyframes} 2s ease-in-out`;
+
+  return (
+    <>
+      <Flex
+        padding="20px"
+        flexDirection="column"
+        alignContent="center"
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Box>
+          <Heading lineHeight="1.30" fontWeight="800" fontSize="2.25rem">
+            Hi 👋,
+            <br />
+            I'm{" "}
+            <Text display="inline" color="brand.themeColor">
+              Aman Deep Kujur
+            </Text>
+            ,
+            <br />
+            MERN Stack Web Developer
+          </Heading>
+        </Box>
+        <Flex alignItems="center" justifyContent="center" wrap="wrap">
+          <Avatar
+            m="5"
+            w="250px"
+            h="250px"
+            name="Aman Deep Kujur"
+            src={profile}
+            border="1px solid gainsboro"
+            zIndex="-5"
+          />
+          <Flex
+            columnGap="3"
+            as={motion.div}
+            animation={animation}
+            // not work: transition={{ ... }}
+            padding="2"
+            // @ts-ignore - "Does not exist" Type Error against Motion
+            width="12"
+            height="12"
+            display="flex"
+          >
+            <a
+              href="https://github.com/amandk5"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillGithub size="50px" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aman-deep-kujur-4a110a171"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiFillLinkedin size="50px" color="#0A66C2" />
+            </a>
+          </Flex>
+        </Flex>
+      </Flex>
+
+      {/* about  */}
+      <Box p="40px" id="about" bg="brand.backgroundColr">
+        <Heading
+          lineHeight="1.30"
+          mb="5"
+          fontWeight="700"
+          // fontSize="2rem"
+          color="brand.themeColor"
+          textUnderlineOffset="0.5rem"
+        >
+          About
+        </Heading>
+        <br />
+        {/* <Box> */}
+        {/* <Heading size="lg">I'm Aman, Nice to meet you</Heading> */}
+        <Container fontSize="25px">
+          I'm a Quick learner and an aspiring full-stack web developer
+          proficient in MERN stack technology. Looking forward to applying and
+          enhancing my skills and knowledge as a developer.
+        </Container>
+        {/* </Box> */}
+      </Box>
+
+      {/* education */}
+      <Box py="40px" px="10px" id="d">
+        <Heading
+          lineHeight="1.30"
+          mb="5"
+          fontWeight="700"
+          // fontSize="2rem"
+          color="brand.themeColor"
+          textUnderlineOffset="0.5rem"
+        >
+          Education
+        </Heading>
+        <br />
+        {/* <Box> */}
+        {/* <Heading size="lg">I'm Aman, Nice to meet you</Heading> */}
+        <Flex
+          justifyContent="center"
+          alignContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <Box>
+            {/* <Box h="50px" border="1px solid black" p="5px">
+                <Text>April 2022 - Present</Text>
+                <Heading size="md">Full Stack Web Development (Full Time)</Heading>
+              </Box> */}
+            <Card
+              image={"https://cdn-icons-png.flaticon.com/512/1940/1940611.png"}
+              duration={"April 2022 - Present"}
+              course={"Full Stack Web Development (Full Time)"}
+              institute={"Masai School"}
+              location={"Remote"}
+            />
+            <Card
+              image={"https://cdn-icons-png.flaticon.com/512/1940/1940611.png"}
+              duration={"August 2017 - June 2021"}
+              course={"Bachelor Of Technology (C.S.E)"}
+              institute={"St. Aloysius Institue Of Technology"}
+              location={"Jabalpur, Madhya Pradesh"}
+            />
+            <Card
+              image={"https://cdn-icons-png.flaticon.com/512/1940/1940611.png"}
+              duration={"April 2015 - March 2017"}
+              course={"Higher Secondary School"}
+              institute={"Carmel School"}
+              location={"Ambikapur,Chhattisgarh"}
+            />
+          </Box>
+          <Box>
+            {/* <Card
+              image={"https://cdn-icons-png.flaticon.com/512/1940/1940611.png"}
+              duration={"April 2015 - March 2017"}
+              course={"Higher Secondary School"}
+              institute={"Carmel School"}
+              location={"Ambikapur,Chhattisgarh"}
+            /> */}
+            <Image src={graduationImage} maxW="400px" h="100%" />
+          </Box>
+        </Flex>
+        {/* </Box> */}
+      </Box>
+
+      {/* skills  */}
+      <Box py="40px" px="10px" id="d" bg="brand.headerBg">
+        <Heading
+          lineHeight="1.30"
+          mb="5"
+          fontWeight="700"
+          // fontSize="2rem"
+          color="brand.themeColor"
+          textUnderlineOffset="0.5rem"
+        >
+          Skills
+        </Heading>
+        <br />
+        <Grid
+          templateColumns={{ base: "repeat(2, 1fr)", md: "repeat(5, 1fr)" }}
+          gap={6}
+        >
+          <SkillCard skill="Html" icon={html5} />
+          <SkillCard skill="CSS" icon={css} />
+          <SkillCard skill="Javascript" icon={javascript} />
+          <SkillCard skill="NodeJs" icon={nodejs} />
+          <SkillCard skill="Express" icon={express} />
+          <SkillCard skill="MongoDb" icon={mongodb} />
+          <SkillCard skill="React" icon={react} />
+          <SkillCard skill="Redux" icon={redux} />
+          <SkillCard skill="Chakra UI" icon={chakraUi} />
+          <SkillCard skill="TypeScript" icon={typescript} />
+          {/* <GridItem w="100%" h="10" bg="blue.500" /> */}
+        </Grid>
+      </Box>
+
+      {/* projects */}
+      <Box py="40px" px="10px" id="d">
+        <Heading
+          lineHeight="1.30"
+          mb="5"
+          fontWeight="700"
+          // fontSize="2rem"
+          color="brand.themeColor"
+          textUnderlineOffset="0.5rem"
+        >
+          Projects
+        </Heading>
+        <br />
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+          gap="6"
+        >
+          <ProjectCard
+            projectName="Zoomcar Clone"
+            projectImage={zoomcar}
+            projectDescription="An online car rental platform where you can rent self drive cars from a wide range of cars collection."
+            projectLink="https://rural-vessel-2538-flax.vercel.app/"
+            projectGithubLink="https://github.com/amandk5/rural-vessel-2538"
+            techStack="HTML | CSS | Javascript | React | Chakra UI "
+          />
+          <ProjectCard
+            projectName="Intern-Theory Clone"
+            projectImage={interntheory}
+            projectDescription="A platform where you can search for internships and apply for the same. "
+            projectLink="https://ubiquitous-wire-4930.vercel.app/"
+            projectGithubLink="https://github.com/amandk5/ubiquitous-wire-4930"
+            techStack="HTML | CSS | Javascript | React | Chakra UI "
+          />
+          <ProjectCard
+            projectName="MentiMeter Clone"
+            projectImage={mentimeter}
+            projectDescription="An online platform to create presentations,slides,quizzes, polls etc."
+            projectLink="https://luxury-gnome-1827a2.netlify.app/"
+            projectGithubLink="https://github.com/amandk5/grandiose-juice-9763"
+            techStack="HTML | CSS | Javascript | Bootstrap "
+          />
+          <ProjectCard
+            projectName="Kindmeal Clone"
+            projectImage={kindmeal}
+            projectDescription="A restaurant coupon service provider where you can search the restaurants and grab the coupon."
+            projectLink="https://kindmeal-unit-2-project.netlify.app/"
+            projectGithubLink="https://github.com/SunilHooda/kindmeal.my-Clone"
+            techStack="HTML | CSS | Javascript | Bootstrap "
+          />
+        </Flex>
+      </Box>
+      <br />
+    </>
+  );
+}
