@@ -1,19 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.a2e7c7d5.css",
-    "main.js": "/static/js/main.a2a324f7.js",
+    "main.js": "/static/js/main.156f6f9a.js",
     "static/media/kindmeal.png": "/static/media/kindmeal.6515d6a3a3f783f72c0e.png",
     "static/media/zoomcar.png": "/static/media/zoomcar.269cda97df806d8b90da.png",
     "static/media/interntheory.png": "/static/media/interntheory.3268706665c3463cf481.png",
+    "static/media/fithub.png": "/static/media/fithub.1e203b4f0288b1117116.png",
     "static/media/graduation1.png": "/static/media/graduation1.8fc45ff252b0d5740f52.png",
+    "static/media/nutrimeter.png": "/static/media/nutrimeter.fa1a5898516e8c8ef489.png",
     "static/media/profile_2.jpeg": "/static/media/profile_2.3f02b714e6bde27c38de.jpeg",
     "static/media/mentimeter.png": "/static/media/mentimeter.9a9665d4a20be7d961a4.png",
     "index.html": "/index.html",
     "main.a2e7c7d5.css.map": "/static/css/main.a2e7c7d5.css.map",
-    "main.a2a324f7.js.map": "/static/js/main.a2a324f7.js.map"
+    "main.156f6f9a.js.map": "/static/js/main.156f6f9a.js.map"
   },
   "entrypoints": [
     "static/css/main.a2e7c7d5.css",
-    "static/js/main.a2a324f7.js"
+    "static/js/main.156f6f9a.js"
   ]
 }
