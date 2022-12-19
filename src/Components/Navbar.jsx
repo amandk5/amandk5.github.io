@@ -12,6 +12,7 @@ import {
   CloseButton,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { FaUserAlt } from "react-icons/fa";
@@ -37,35 +38,96 @@ export default function Navbar() {
         background="white"
       >
         <Box>
-          <Text
-            as="b"
-            fontSize="35px"
-            fontWeight="extrabold"
-            align="left"
-            color="brand.themeColor"
-          >
-            PORTFOLIO
-          </Text>
+          <a href="#top">
+            <Text
+              as="b"
+              fontSize="35px"
+              fontWeight="extrabold"
+              align="left"
+              color="brand.themeColor"
+            >
+              PORTFOLIO
+            </Text>
+          </a>
         </Box>
         {!isSmallerThan700 ? (
-          <Box display="flex" columnGap="2" justifyContent="space-around">
-            <Link as="b" textUnderlineOffset="0.5em">
+          <Box display="flex" columnGap="3" justifyContent="space-around">
+            <Link
+              fontWeight="bold"
+              textUnderlineOffset="0.5em"
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
               <a href="#top">Home</a>
             </Link>
-            <Link as="b" textUnderlineOffset="0.5em">
+            <Link
+              fontWeight="bold"
+              textUnderlineOffset="0.5em"
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
               <a href="#about">About</a>
             </Link>
-            <Link as="b" textUnderlineOffset="0.5em">
-              <a href="#f">Skills</a>
+            <Link
+              fontWeight="bold"
+              textUnderlineOffset="0.5em"
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
+              <a href="#skills">Skills</a>
             </Link>
-            <Link as="b" textUnderlineOffset="0.5em">
-              <a href="#a">Projects</a>
+            <Link
+              fontWeight="bold"
+              textUnderlineOffset="0.5em"
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
+              <a href="#projects">Projects</a>
             </Link>
-            <Link as="b" textUnderlineOffset="0.5em">
-              <a href="#footer">Contact</a>
+            <Link
+              fontWeight="bold"
+              textUnderlineOffset="0.5em"
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
+              <a href="#contact">Contact</a>
             </Link>
-            <Link as="b" textUnderlineOffset="0.5em">
-              <a href="#footer">Resume</a>
+            <Link
+              fontWeight="bold"
+              textUnderlineOffset="0.5em"
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
+              <a
+                href="https://github.com/amandk5/Resume/raw/main/Aman-Deep-Kujur-Resume.pdf"
+                download
+              >
+                Resume
+              </a>
             </Link>
           </Box>
         ) : (
@@ -98,7 +160,7 @@ export default function Navbar() {
                 alignItems="center"
                 gap="2"
               >
-                <FaUserAlt />
+                {/* <FaUserAlt /> */}
                 <a href="#top">Home</a>
               </Flex>
             </Link>

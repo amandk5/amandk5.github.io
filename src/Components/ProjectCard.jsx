@@ -27,9 +27,9 @@ export default function ProjectCard({
         as={motion.div}        
         drag="x"
         dragConstraints={{ left: -100, right: 100 }}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.9 }}
-        transition="0.2s linear"
+        transition="0.1s linear"
       >
         <Heading fontSize="23px" bg="" p="2">
           {projectName}

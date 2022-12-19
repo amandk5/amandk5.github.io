@@ -7,15 +7,18 @@ import {
   GridItem,
   Heading,
   Image,
+  Img,
   keyframes,
+  Link,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import React from "react";
 import Card from "./Card";
 import SkillCard from "./SkillCard";
 import ProjectCard from "./ProjectCard";
 
-import profile from "../Images/profile.png";
+import profile from "../Images/profile_2.jpeg";
 import graduationImage from "../Images/graduation1.png";
 
 import mongodb from "../Images/skills/mongodb.png";
@@ -29,6 +32,8 @@ import typescript from "../Images/skills/typescript.png";
 import javascript from "../Images/skills/javascript.png";
 import chakraUi from "../Images/skills/chakraUi.png";
 
+import fithub from "../Images/apps/fithub.png";
+import nutrimeter from "../Images/apps/nutrimeter.png";
 import mentimeter from "../Images/apps/mentimeter.png";
 import zoomcar from "../Images/apps/zoomcar.png";
 import interntheory from "../Images/apps/interntheory.png";
@@ -36,22 +41,35 @@ import kindmeal from "../Images/apps/kindmeal.png";
 
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
+import CalenderGithub from "./CalendarGithub";
 
 export default function Content() {
+  //   const animationKeyframes = keyframes`
+  //   0% { transform: scale(1) rotate(0); border-radius: 20%; }
+  //   25% { transform: scale(2) rotate(0); border-radius: 20%; }
+  //   50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
+  //   75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
+  //   100% { transform: scale(1) rotate(0); border-radius: 20%; }
+  // `;
 
-  const animationKeyframes = keyframes`
-  0% { transform: scale(1) rotate(0); border-radius: 20%; }
-  25% { transform: scale(2) rotate(0); border-radius: 20%; }
-  50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
-  75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
-  100% { transform: scale(1) rotate(0); border-radius: 20%; }
-`;
+  // .fadesample {
+  // 	animation-name: fadeIn; 				// which named animation?
+  // 	animation-duration: 3s;        			// how long?
+  // 	animation-iteration-count:infinite;  	// keep going?
+  // 	}
+  const [isSmallerThan700] = useMediaQuery("(max-width: 450px)");
 
-const animation = `${animationKeyframes} 2s ease-in-out`;
+  const animationKeyframes = keyframes` 
+	0% {opacity: 0;} // CSS properties at start
+	100% {opacity: 1;} // CSS properties at end
+	`;
+
+  const animation = `${animationKeyframes} 2s ease-in-out`;
 
   return (
     <>
       <Flex
+        margin="auto"
         padding="20px"
         flexDirection="column"
         alignContent="center"
@@ -82,6 +100,8 @@ const animation = `${animationKeyframes} 2s ease-in-out`;
             zIndex="-5"
           />
           <Flex
+            alignItems={isSmallerThan700 && "center"}
+            justifyContent={isSmallerThan700 && "center"}
             columnGap="3"
             as={motion.div}
             animation={animation}
@@ -97,21 +117,38 @@ const animation = `${animationKeyframes} 2s ease-in-out`;
               target="_blank"
               rel="noreferrer"
             >
-              <AiFillGithub size="50px" />
+              <Box
+                as={motion.div}
+                drag="x"
+                dragConstraints={{ left: -100, right: 100 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.9 }}
+                transition="0.1s linear"
+              >
+                <AiFillGithub size="50px" />
+              </Box>
             </a>
             <a
               href="https://www.linkedin.com/in/aman-deep-kujur-4a110a171"
               target="_blank"
               rel="noreferrer"
             >
-              <AiFillLinkedin size="50px" color="#0A66C2" />
+              <Box
+                as={motion.div}
+                drag="x"
+                dragConstraints={{ left: -100, right: 100 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.9 }}
+                transition="0.1s linear"
+              >
+                <AiFillLinkedin size="50px" color="#0A66C2" />
+              </Box>
             </a>
           </Flex>
         </Flex>
       </Flex>
-
       {/* about  */}
-      <Box p="40px" id="about" bg="brand.backgroundColr">
+      <Box p="40px" id="about" bg="brand.backgroundColr" borderRadius="0.5rem">
         <Heading
           lineHeight="1.30"
           mb="5"
@@ -125,16 +162,17 @@ const animation = `${animationKeyframes} 2s ease-in-out`;
         <br />
         {/* <Box> */}
         {/* <Heading size="lg">I'm Aman, Nice to meet you</Heading> */}
-        <Container fontSize="25px">
+        {/* <Container> */}
+        <Text fontSize="lg" letterSpacing="1px">
           I'm a Quick learner and an aspiring full-stack web developer
           proficient in MERN stack technology. Looking forward to applying and
           enhancing my skills and knowledge as a developer.
-        </Container>
+        </Text>
+        {/* </Container> */}
         {/* </Box> */}
       </Box>
-
       {/* education */}
-      <Box py="40px" px="10px" id="d">
+      <Box id="education" py="40px" px="10px">
         <Heading
           lineHeight="1.30"
           mb="5"
@@ -195,8 +233,77 @@ const animation = `${animationKeyframes} 2s ease-in-out`;
         {/* </Box> */}
       </Box>
 
+      {/* github stats  */}
+      <Box w="100%" mb="10">
+        <Heading
+          lineHeight="1.30"
+          mb="5"
+          fontWeight="700"
+          // fontSize="2rem"
+          color="brand.themeColor"
+          textUnderlineOffset="0.5rem"
+        >
+          Github Stats
+        </Heading>
+        <br />
+        <Flex justifyContent="space-around" flexWrap="wrap" rowGap="1">
+          <Box
+            w={!isSmallerThan700 ? "48%" : "100%"}
+            minW={isSmallerThan700 ? "100%" : "48%"}
+          >
+            <Img
+              w="100%"
+              align="center"
+              src="https://github-readme-stats.vercel.app/api?username=amandk5&show_icons=true&locale=en&theme=react"
+              alt="amandk5"
+            />
+          </Box>
+          <Box
+            w={!isSmallerThan700 ? "48%" : "100%"}
+            minW={isSmallerThan700 ? "100%" : "48%"}
+          >
+            <Img
+              w="100%"
+              align="center"
+              src="https://github-readme-streak-stats.herokuapp.com/?user=amandk5&theme=tokyonight"
+              alt="amandk5"
+            />
+          </Box>
+        </Flex>
+        <Flex mt="1" justifyContent="center" w="100%">
+          <Img
+            w={isSmallerThan700 ? "100%" : "48%"}
+            align="center"
+            src="https://github-readme-stats.vercel.app/api/top-langs?username=amandk5&show_icons=true&locale=en&layout=compact&theme=react"
+            alt="amandk5"
+            backgroundColor="#20232A"
+          />
+        </Flex>
+      </Box>
+
+      {/* gihub calendar  */}
+      <Heading
+        lineHeight="1.30"
+        mb="5"
+        fontWeight="700"
+        // fontSize="2rem"
+        color="brand.themeColor"
+        textUnderlineOffset="0.5rem"
+      >
+        Github Calendar
+      </Heading>
+      <br />
+      <CalenderGithub />
+      <br />
+      <br />
       {/* skills  */}
-      <Box py="40px" px="10px" id="d" bg="brand.headerBg">
+      <Box
+        id="skills"
+        py="40px"
+        px="10px"
+        bg="brand.headerBg"
+        borderRadius="0.5rem"
+      >
         <Heading
           lineHeight="1.30"
           mb="5"
@@ -225,9 +332,8 @@ const animation = `${animationKeyframes} 2s ease-in-out`;
           {/* <GridItem w="100%" h="10" bg="blue.500" /> */}
         </Grid>
       </Box>
-
       {/* projects */}
-      <Box py="40px" px="10px" id="d">
+      <Box id="projects" py="40px" px="10px">
         <Heading
           lineHeight="1.30"
           mb="5"
@@ -245,6 +351,22 @@ const animation = `${animationKeyframes} 2s ease-in-out`;
           flexWrap="wrap"
           gap="6"
         >
+          <ProjectCard
+            projectName="Fithub"
+            projectImage={fithub}
+            projectDescription="Fithub Blender (A clone of Fitness Blender) provides free full length workout videos, workout routines, healthy recipes and more."
+            projectLink="https://fithub-mu.vercel.app/"
+            projectGithubLink="https://github.com/nilamkhose2001/obsolete-battle-2339-fithub-"
+            techStack="HTML | CSS | Javascript | React | Redux | Redux Thunk | Express | MongoDb | Chakra UI"
+          />
+          <ProjectCard
+            projectName="Nutrimeter"
+            projectImage={nutrimeter}
+            projectDescription="Nutrimeter is a one stop solution for all health related information and to track your daily calories."
+            projectLink="https://nutrimeter.vercel.app/"
+            projectGithubLink="https://github.com/harshu878/nutrimeter"
+            techStack="HTML | CSS | Javascript | React | Redux | Redux Thunk | Express | MongoDb | Chakra UI"
+          />
           <ProjectCard
             projectName="Zoomcar Clone"
             projectImage={zoomcar}

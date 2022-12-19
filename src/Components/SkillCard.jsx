@@ -5,7 +5,7 @@ export default function SkillCard({ skill, icon }) {
 
   return (
     <GridItem
-      w="100%"
+      w="80%"
       p="2"
       margin="auto"
       // border="1px solid gainsboro"

@@ -7,7 +7,7 @@ import Form from "./Form";
 
 export default function Footer() {
   return (
-    <Box padding="1rem" bg="brand.footer" id="footer">
+    <Box padding="1rem" bg="brand.footer" id="contact">
       <br />
       <Heading as="b" color="brand.themeColor">
         Reach Out To Me
@@ -25,7 +25,7 @@ export default function Footer() {
         >
           <Flex justifyContent="center" alignItems="center" gap="2">
             <img src={email} alt={email} width="32px" height="32px" />
-            <Text>adkofficial01@gmail.com</Text>
+            <Text letterSpacing="1px">adkofficial01@gmail.com</Text>
           </Flex>
         </Box>
         <Box
@@ -37,7 +37,7 @@ export default function Footer() {
         >
           <Flex justifyContent="center" alignItems="center" gap="2">
             <img src={phone} alt={phone} width="32px" height="32px" />
-            <Text>+91-1234567890</Text>
+            <Text letterSpacing="1px">+91-7389325639</Text>
           </Flex>
         </Box>
       </Flex>
