@@ -36,7 +36,7 @@ export default function ProjectCard({
         </Heading>
         <br />
         <Image src={projectImage} border="2px solid gainsboro" />
-        <Text p="2" h="100px">
+        <Text p="2" h="auto">
           {projectDescription}
         </Text>
         <Text p="2">

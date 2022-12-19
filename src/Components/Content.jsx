@@ -354,7 +354,7 @@ export default function Content() {
           <ProjectCard
             projectName="Fithub"
             projectImage={fithub}
-            projectDescription="Fithub Blender (A clone of Fitness Blender) provides free full length workout videos, workout routines, healthy recipes and more."
+            projectDescription="Fithub Blender provides free full length workout videos, workout routines, healthy recipes etc."
             projectLink="https://fithub-mu.vercel.app/"
             projectGithubLink="https://github.com/nilamkhose2001/obsolete-battle-2339-fithub-"
             techStack="HTML | CSS | Javascript | React | Redux | Redux Thunk | Express | MongoDb | Chakra UI"
@@ -394,7 +394,7 @@ export default function Content() {
           <ProjectCard
             projectName="Kindmeal Clone"
             projectImage={kindmeal}
-            projectDescription="A restaurant coupon service provider where you can search the restaurants and grab the coupon."
+            projectDescription="A restaurant coupon service provider where you can search restaurants and grab coupons."
             projectLink="https://kindmeal-unit-2-project.netlify.app/"
             projectGithubLink="https://github.com/SunilHooda/kindmeal.my-Clone"
             techStack="HTML | CSS | Javascript | Bootstrap "
