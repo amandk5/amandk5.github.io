@@ -24,9 +24,9 @@ export default function ProjectCard({
         border="1px solid gainsboro"
         borderRadius="0.5rem"
         _hover={{ boxShadow: "xl" }}
-        as={motion.div}        
+        as={motion.div}
         drag="x"
-        dragConstraints={{ left: -100, right: 100 }}
+        dragConstraints={{ left: 0, right: 0 }}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.9 }}
         transition="0.1s linear"

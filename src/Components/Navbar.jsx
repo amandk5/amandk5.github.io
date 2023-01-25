@@ -36,6 +36,7 @@ export default function Navbar() {
         position="sticky"
         top="0"
         background="white"
+        zIndex="10"
       >
         <Box>
           <a href="#top">

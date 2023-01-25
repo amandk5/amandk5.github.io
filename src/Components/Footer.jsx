@@ -4,14 +4,21 @@ import React from "react";
 import email from "../Images/others/email.png";
 import phone from "../Images/others/phone.png";
 import Form from "./Form";
+import LinkedInAndGithub from "./LinkedInAndGithub";
 
 export default function Footer() {
   return (
     <Box padding="1rem" bg="brand.footer" id="contact">
       <br />
-      <Heading as="b" color="brand.themeColor">
-        Reach Out To Me
-      </Heading>
+      <Flex justifyContent={"center"} alignItems="center">
+        <Heading as="b" color="brand.themeColor" w="50%">
+          Reach Out To Me
+        </Heading>
+        <Flex justifyContent={"right"}>
+          {/* linkedIn and github icon  */}
+          <LinkedInAndGithub />
+        </Flex>
+      </Flex>
       <br />
       <br />
       <br />
