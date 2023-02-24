@@ -31,6 +31,7 @@ import css from "../Images/skills/css.png";
 import typescript from "../Images/skills/typescript.png";
 import javascript from "../Images/skills/javascript.png";
 import chakraUi from "../Images/skills/chakraUi.png";
+import nextjs from "../Images/skills/nextjs.png";
 
 import fithub from "../Images/apps/fithub.png";
 import nutrimeter from "../Images/apps/nutrimeter.png";
@@ -277,7 +278,7 @@ export default function Content() {
           <SkillCard skill="MongoDb" icon={mongodb} />
           <SkillCard skill="React" icon={react} />
           <SkillCard skill="Redux" icon={redux} />
-          <SkillCard skill="Chakra UI" icon={chakraUi} />
+          <SkillCard skill="NextJs" icon={nextjs} />
           <SkillCard skill="TypeScript" icon={typescript} />
           {/* <GridItem w="100%" h="10" bg="blue.500" /> */}
         </Grid>
