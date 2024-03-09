@@ -2,7 +2,7 @@ import React from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { keyframes } from "@emotion/react";
-import { Box, Flex, useMediaQuery } from "@chakra-ui/react";
+import { Box, Flex, Tooltip, useMediaQuery } from "@chakra-ui/react";
 
 export default function LinkedInAndGithub() {
   const [isSmallerThan700] = useMediaQuery("(max-width: 450px)");
@@ -29,34 +29,38 @@ export default function LinkedInAndGithub() {
         height="12"
         display="flex"
       >
-        <a href="https://github.com/amandk5" target="_blank" rel="noreferrer">
-          <Box
-            as={motion.div}
-            drag="x"
-            dragConstraints={{ left: -100, right: 100 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.9 }}
-            transition="0.1s linear"
+        <Tooltip label="Github">
+          <a href="https://github.com/amandk5" target="_blank" rel="noreferrer">
+            <Box
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
+              <AiFillGithub size="50px" />
+            </Box>
+          </a>
+        </Tooltip>
+        <Tooltip label="LinkdedIn">
+          <a
+            href="https://www.linkedin.com/in/aman-deep-kujur-4a110a171"
+            target="_blank"
+            rel="noreferrer"
           >
-            <AiFillGithub size="50px" />
-          </Box>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/aman-deep-kujur-4a110a171"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Box
-            as={motion.div}
-            drag="x"
-            dragConstraints={{ left: -100, right: 100 }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.9 }}
-            transition="0.1s linear"
-          >
-            <AiFillLinkedin size="50px" color="#0A66C2" />
-          </Box>
-        </a>
+            <Box
+              as={motion.div}
+              drag="x"
+              dragConstraints={{ left: -100, right: 100 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.9 }}
+              transition="0.1s linear"
+            >
+              <AiFillLinkedin size="50px" color="#0A66C2" />
+            </Box>
+          </a>
+        </Tooltip>
       </Flex>
     </>
   );

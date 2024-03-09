@@ -47,7 +47,7 @@ export default function Navbar() {
               align="left"
               color="brand.themeColor"
             >
-              PORTFOLIO
+              MY PORTFOLIO
             </Text>
           </a>
         </Box>

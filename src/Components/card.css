@@ -1,0 +1,8 @@
+.locationIcon {
+  color: #1081e0;
+}
+.card :hover {
+  .locationIcon {
+    color: white;
+  }
+}

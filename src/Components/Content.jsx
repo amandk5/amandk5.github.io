@@ -149,8 +149,26 @@ export default function Content() {
                 <Heading size="md">Full Stack Web Development (Full Time)</Heading>
               </Box> */}
             <Card
+              image={
+                "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-employee-customer-reviews-tanah-basah-glyph-tanah-basah.png"
+              }
+              duration={"November 2023 - Present"}
+              course={"Frontend Developer ReactJs (Full Time)"}
+              institute={"Twinleaves"}
+              location={"Bangalore, India"}
+            />
+            <Card
+              image={
+                "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-employee-customer-reviews-tanah-basah-glyph-tanah-basah.png"
+              }
+              duration={"April 2023 - October 2023"}
+              course={"Frontend Developer ReactJs Intern (Full Time)"}
+              institute={"Twinleaves"}
+              location={"Bangalore, India"}
+            />
+            <Card
               image={"https://cdn-icons-png.flaticon.com/512/1940/1940611.png"}
-              duration={"April 2022 - Present"}
+              duration={"April 2022 - March 2023"}
               course={"Full Stack Web Development (Full Time)"}
               institute={"Masai School"}
               location={"Remote"}
@@ -263,7 +281,7 @@ export default function Content() {
           color="brand.themeColor"
           textUnderlineOffset="0.5rem"
         >
-          Skills
+          My Skills
         </Heading>
         <br />
         <Grid
