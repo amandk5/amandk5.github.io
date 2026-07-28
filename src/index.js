@@ -6,41 +6,54 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
-  // styles: {
-  //   global: {
-  //     // styles for the `body`
-  //     body:{
-  //       FontFace: `'Calibri', sans-seriff`
-  //     }
-  //   },
-  // },
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
+  styles: {
+    global: {
+      body: {
+        bg: "#0b0f19",
+        color: "whiteAlpha.900",
+        fontFamily: "'Inter', sans-serif",
+      },
+      html: {
+        scrollBehavior: "smooth",
+      }
+    },
+  },
   fonts: {
-    // body:`'Poppins', sans-serif`,
-    body: `"eurostile", sans-serif`,
-    text: `"europa", sans-serif`,
+    heading: `'Inter', sans-serif`,
+    body: `'Inter', sans-serif`,
   },
   colors: {
     brand: {
-      100: "#f7fafc",
-      // ...
-      900: "#1a202c",
-      // footer: "#0E2431",
-      footer:"#EDF2F8",
-      hoverBlack:'#141C3A',
-      themeColor: "#0284c7",
-      projectCardTopBottom:"teal",
-      backgroundColr:"#EDF2F8",
-      headerBg:"#EDF2F8"
+      50: "#e0f2fe",
+      100: "#bae6fd",
+      500: "#0ea5e9", // Sky 500
+      600: "#0284c7", // Sky 600
+      900: "#0c4a6e",
+      themeColor: "#0ea5e9", // Vibrant sky blue
+      backgroundColr: "rgba(255, 255, 255, 0.03)",
+      headerBg: "rgba(11, 15, 25, 0.7)", // Semi-transparent for glass effect
+      cardBg: "rgba(255, 255, 255, 0.05)",
+      cardHover: "rgba(255, 255, 255, 0.08)",
+      footer: "rgba(255, 255, 255, 0.02)",
     },
   },
   components: {
     Drawer: {
       sizes: {
-        xs:{
-          width:"50px"
+        xs: {
+          width: "250px", // Increased from 50px for better usability
         },
       },
     },
+    Heading: {
+      baseStyle: {
+        letterSpacing: "-0.02em",
+      }
+    }
   },
 });
 

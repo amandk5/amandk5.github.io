@@ -17,17 +17,13 @@ export default function LinkedInAndGithub() {
   return (
     <>
       <Flex
-        alignItems={isSmallerThan700 && "center"}
-        justifyContent={isSmallerThan700 && "center"}
+        alignItems={isSmallerThan700 ? "center" : undefined}
+        justifyContent={isSmallerThan700 ? "center" : undefined}
         columnGap="3"
         as={motion.div}
         animation={animation}
-        // not work: transition={{ ... }}
         padding="2"
-        // @ts-ignore - "Does not exist" Type Error against Motion
-        width="12"
-        height="12"
-        display="flex"
+        width="fit-content"
       >
         <Tooltip label="Github">
           <a href="https://github.com/amandk5" target="_blank" rel="noreferrer">

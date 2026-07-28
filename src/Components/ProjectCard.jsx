@@ -1,9 +1,7 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Badge, Link, Icon } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
-import { useState } from "react";
-import { AiOutlinePlayCircle, AiFillPlayCircle } from "react-icons/ai";
-import { DiCode } from "react-icons/di";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 export default function ProjectCard({
   projectName,
@@ -13,62 +11,105 @@ export default function ProjectCard({
   projectGithubLink,
   techStack,
 }) {
-  //   const [hoverPlay, setHoverPlay] = useState(false);
+  const techs = techStack.split("|").map(t => t.trim()).filter(Boolean);
 
   return (
-    <>
-      <Box
-        w={{ sm: "95%", md: "40%", lg: "31%" }}
-        p="2"
-        bg="white"
-        border="1px solid gainsboro"
-        borderRadius="0.5rem"
-        _hover={{ boxShadow: "xl" }}
-        as={motion.div}
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.9 }}
-        transition="0.1s linear"
-      >
-        <Heading fontSize="23px" bg="" p="2">
+    <Box
+      as={motion.div}
+      w={{ base: "100%", md: "47%", lg: "31%" }}
+      bg="rgba(255, 255, 255, 0.02)"
+      backdropFilter="blur(10px)"
+      border="1px solid rgba(255, 255, 255, 0.05)"
+      borderRadius="2xl"
+      overflow="hidden"
+      display="flex"
+      flexDirection="column"
+      whileHover={{ y: -10 }}
+      transition="0.3s ease"
+      boxShadow="0 10px 30px -10px rgba(0,0,0,0.5)"
+      _hover={{
+        boxShadow: "0 20px 40px -10px rgba(0,0,0,0.7)",
+        borderColor: "brand.themeColor"
+      }}
+    >
+      <Box overflow="hidden" position="relative" h="200px">
+        <Image 
+          src={projectImage} 
+          w="100%" 
+          h="100%" 
+          objectFit="cover" 
+          transition="0.5s ease"
+          _hover={{ transform: "scale(1.05)" }}
+        />
+        <Box 
+          position="absolute" 
+          top="0" 
+          left="0" 
+          w="100%" 
+          h="100%" 
+          bg="linear-gradient(180deg, rgba(11,15,25,0) 0%, rgba(11,15,25,0.8) 100%)" 
+          pointerEvents="none"
+        />
+      </Box>
+
+      <Box p={6} display="flex" flexDirection="column" flex="1">
+        <Heading fontSize="2xl" color="whiteAlpha.900" mb={3} fontWeight="700">
           {projectName}
         </Heading>
-        <br />
-        <Image src={projectImage} border="2px solid gainsboro" />
-        <Text p="2" h="auto">
+        
+        <Text color="whiteAlpha.700" fontSize="md" mb={6} flex="1" lineHeight="1.6">
           {projectDescription}
         </Text>
-        <Text p="2">
-          <b>Tech Stack:</b>
-        </Text>
-        <Text color="brand.themeColor">{techStack}</Text>
-        <Box p="2" bg="">
-          <Flex justifyContent="space-between" alignItems="center">
-            <Box
-              borderRadius="50%"
-              color="white"
-              background="black"
-              _hover={{ color: "black", background: "white" }}
-            >
-              {/* {!hoverPlay && <AiOutlinePlayCircle size="35px" color="" />} */}
-              <a href={projectLink} target="_blank" rel="noreferrer">
-                <AiFillPlayCircle size="35px" />
-              </a>
-            </Box>
-            <Box
-              borderRadius="50%"
-              color="black"
-              background="white"
-              _hover={{ color: "white", background: "black" }}
-            >
-              <a href={projectGithubLink} target="blank">
-                <DiCode size="35px" />
-              </a>
-            </Box>
+
+        <Box mb={6}>
+          <Flex wrap="wrap" gap={2}>
+            {techs.map((tech, idx) => (
+              <Badge 
+                key={idx} 
+                px={2} 
+                py={1} 
+                bg="rgba(14, 165, 233, 0.15)" 
+                color="brand.themeColor" 
+                borderRadius="md"
+                textTransform="none"
+                fontWeight="500"
+                fontSize="xs"
+              >
+                {tech}
+              </Badge>
+            ))}
           </Flex>
         </Box>
+
+        <Flex gap={4} mt="auto">
+          <Link
+            href={projectGithubLink}
+            isExternal
+            display="flex"
+            alignItems="center"
+            gap={2}
+            color="whiteAlpha.700"
+            _hover={{ color: "brand.themeColor", textDecoration: "none" }}
+            fontSize="sm"
+            fontWeight="600"
+          >
+            <Icon as={FiGithub} boxSize={5} /> Source
+          </Link>
+          <Link
+            href={projectLink}
+            isExternal
+            display="flex"
+            alignItems="center"
+            gap={2}
+            color="whiteAlpha.700"
+            _hover={{ color: "brand.themeColor", textDecoration: "none" }}
+            fontSize="sm"
+            fontWeight="600"
+          >
+            <Icon as={FiExternalLink} boxSize={5} /> Live Demo
+          </Link>
+        </Flex>
       </Box>
-    </>
+    </Box>
   );
 }

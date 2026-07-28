@@ -35,59 +35,64 @@ export default function Form() {
       });
   };
 
+  const inputStyles = {
+    background: "rgba(255, 255, 255, 0.05)",
+    border: "1px solid rgba(255, 255, 255, 0.1)",
+    color: "whiteAlpha.900",
+    _placeholder: { color: "whiteAlpha.500" },
+    _hover: { borderColor: "brand.themeColor" },
+    _focus: { borderColor: "brand.themeColor", boxShadow: "0 0 0 1px #0ea5e9" },
+    letterSpacing: "1px",
+    mb: "4",
+  };
+
   return (
     <form onSubmit={handleSubmit}>
-      <FormControl w="70%" margin="auto">
+      <FormControl w={{ base: "90%", md: "70%" }} margin="auto">
         <Input
           required
-          // name="name"
-          letterSpacing="1px"
-          background="white"
           type="text"
           placeholder="Your Name"
-          mb="4"
           value={emailData.name}
           onChange={({ target }) =>
             setEmailData({ ...emailData, name: target.value })
           }
+          {...inputStyles}
         />
         <Input
           required
-          // name="email"
-          letterSpacing="1px"
-          background="white"
           type="email"
-          placeholder="Your Email Addresss"
-          mb="4"
+          placeholder="Your Email Address"
           value={emailData.email}
           onChange={({ target }) =>
             setEmailData({ ...emailData, email: target.value })
           }
+          {...inputStyles}
         />
         <Textarea
           required
-          // name="message"
-          letterSpacing="1px"
-          background="white"
           placeholder="Type your message..."
           size="lg"
-          mb="4"
           value={emailData.message}
           onChange={({ target }) =>
             setEmailData({ ...emailData, message: target.value })
           }
+          {...inputStyles}
         />
         <Button
           type="submit"
-          bg="white"
-          color="black"
-          _hover={{ color: "white", background: "black" }}
+          bg="brand.themeColor"
+          color="white"
+          _hover={{ bg: "blue.400", transform: "translateY(-2px)" }}
+          transition="0.2s ease"
+          w="full"
+          py={6}
         >
           <Flex gap="2" alignItems="center">
             <Box>
-              <Image src={send} w="24px" h="24px" />
+              <Image src={send} w="20px" h="20px" filter="brightness(0) invert(1)" />
             </Box>
-            <Text>Send</Text>
+            <Text fontWeight="600" fontSize="md">Send Message</Text>
           </Flex>
         </Button>
       </FormControl>

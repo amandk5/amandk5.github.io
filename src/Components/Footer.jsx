@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 
 import email from "../Images/others/email.png";
@@ -8,20 +8,21 @@ import LinkedInAndGithub from "./LinkedInAndGithub";
 
 export default function Footer() {
   return (
-    <Box padding="1rem" bg="brand.footer" id="contact">
-      <br />
-      <Flex justifyContent={"center"} alignItems="center">
-        <Heading as="b" color="brand.themeColor" w="50%">
+    <Box padding={{ base: "2rem 1rem", md: "4rem 2rem" }} bg="brand.footer" id="contact">
+      <Flex 
+        direction={{ base: "column", md: "row" }}
+        justifyContent="center" 
+        alignItems="center"
+        gap={{ base: 6, md: 8 }}
+        mb={10}
+      >
+        <Heading as="b" color="brand.themeColor" fontSize={{ base: "3xl", md: "4xl" }} textAlign="center" m={0}>
           Reach Out To Me
         </Heading>
-        <Flex justifyContent={"right"}>
-          {/* linkedIn and github icon  */}
+        <Flex>
           <LinkedInAndGithub />
         </Flex>
       </Flex>
-      <br />
-      <br />
-      <br />
       <Flex justifyContent="center" gap="5" flexWrap="wrap">
         <Box
           color="white"
