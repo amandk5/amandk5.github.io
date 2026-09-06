@@ -108,7 +108,7 @@ export default function Content() {
             </Flex>
           </motion.div>
         </Box>
-        
+
         <Box flex="1" display="flex" justifyContent="center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -156,7 +156,7 @@ export default function Content() {
           About Me
         </Heading>
         <Text fontSize={{ base: "md", md: "lg" }} letterSpacing="0.5px" color="whiteAlpha.800" lineHeight="1.8">
-          Full Stack Developer with 4+ years of experience building scalable web applications in the ecommerce and SaaS domains. Experienced in React, backend development, API integration, and end-to-end feature delivery. Currently leading a team of 4 engineers, driving code quality, performance optimization, and scalable application architecture. Skilled in feature development, code reviews, mentoring developers, and collaborating with cross-functional teams to deliver reliable, production-ready software. Strong expertise in React Hooks, Redux Toolkit, state management patterns, REST APIs, reusable component systems, and performance optimization techniques.
+          Full Stack Developer with 4+ years of experience building scalable web applications in the ecommerce and SaaS domains. Experienced in React, backend development, API integration, and end-to-end feature delivery. Led a team of 4 engineers, driving code quality, performance optimization, and scalable application architecture. Skilled in feature development, code reviews, mentoring developers, and collaborating with cross-functional teams to deliver reliable, production-ready software. Strong expertise in React Hooks, Redux Toolkit, state management patterns, REST APIs, reusable component systems, and performance optimization techniques.
         </Text>
       </Box>
 
@@ -183,8 +183,8 @@ export default function Content() {
               image={
                 "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-employee-customer-reviews-tanah-basah-glyph-tanah-basah.png"
               }
-              duration={"November 2023 - Present"}
-              course={"Frontend Developer ReactJs (Full Time)"}
+              duration={"November 2023 - August 2026"}
+              course={"Software Development Engineer II"}
               institute={"Twinleaves"}
               location={"Bangalore, India"}
             />
@@ -193,14 +193,14 @@ export default function Content() {
                 "https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/external-employee-customer-reviews-tanah-basah-glyph-tanah-basah.png"
               }
               duration={"April 2023 - October 2023"}
-              course={"Frontend Developer ReactJs Intern"}
+              course={"Software Development Engineer I Intern"}
               institute={"Twinleaves"}
               location={"Bangalore, India"}
             />
             <Card
               image={"https://cdn-icons-png.flaticon.com/512/1940/1940611.png"}
               duration={"April 2022 - March 2023"}
-              course={"Full Stack Web Development"}
+              course={"Full Stack Web Development - MERN"}
               institute={"Masai School"}
               location={"Remote"}
             />
@@ -226,10 +226,10 @@ export default function Content() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <Image 
-                src={graduationImage} 
-                maxW="500px" 
-                w="100%" 
+              <Image
+                src={graduationImage}
+                maxW="500px"
+                w="100%"
                 filter="drop-shadow(0px 10px 20px rgba(0,0,0,0.2))"
               />
             </motion.div>
@@ -341,7 +341,7 @@ export default function Content() {
             { category: "Generative AI & Tools", items: ["Gemini API", "Prompt Engineering", "Claude Code", "Github Co-Pilot", "Figma MCP"] },
             { category: "Backend & Infrastructure", items: ["Node.js", "Express.js", "MongoDB", "Git", "GitHub", "Postman", "GCP", "Agile/Scrum"] },
           ].map((skillSet, idx) => (
-            <Box 
+            <Box
               key={idx}
               bg="rgba(255, 255, 255, 0.02)"
               backdropFilter="blur(10px)"
